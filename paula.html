@@ -3,8 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paula Kreuzer</title>
+    <title>Paula Kreuzer "Soon you are going to reach perfection"</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Grid für Bilder */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            object-fit: cover;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Lightbox/Fullscreen */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 1000;
+        }
+
+        .lightbox.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 5px;
+        }
+
+        /* Navigation Buttons */
+        .prev, .next, .close {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 2rem;
+            background: rgba(0,0,0,0.5);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .prev { left: 20px; }
+        .next { right: 20px; }
+        .close { top: 20px; right: 20px; transform: none; }
+
+        .prev:hover, .next:hover, .close:hover {
+            background: rgba(255,0,0,0.8);
+        }
+    </style>
 </head>
 <body>
 
@@ -15,9 +89,91 @@
 <div class="red-bar"></div>
 
 <main>
-    <h1>Paula Kreuzer 29.1.-1.2.2026</h1>
-    <p>Hier kannst du Inhalte zu Paula Kreuzer einfügen.</p>
+    <h1> Paula Kreuzer, "Soon you are going to reach perfection"</h1>
+
+    <div class="gallery">
+        
+        <img src="assets/paula01.jpg" alt="Paula 01">
+        <img src="assets/paula02.jpg" alt="Paula 02">
+        <img src="assets/paula03.jpg" alt="Paula 03">
+        <img src="assets/paula04.jpg" alt="Paula 04">
+        <img src="assets/paula05.jpg" alt="Paula 05">
+        <img src="assets/paula06.jpg" alt="Paula 06">
+        <img src="assets/paula07.jpg" alt="Paula 07">
+        <img src="assets/paula08.jpg" alt="Paula 08">
+       <img src="assets/paula09.jpg" alt="Paula 09">
+        <img src="assets/paula10.jpg" alt="Paula 10">
+        <img src="assets/paula11.jpg" alt="Paula 11">
+        <img src="assets/paula12.jpg" alt="Paula 12">
+         <img src="assets/paula13.jpg" alt="Paula 13">
+        <img src="assets/paula14.jpg" alt="Paula 14">
+        <img src="assets/paula15.jpg" alt="Paula 15">
+        <img src="assets/paula16.jpg" alt="Paula 16">
+        <img src="assets/paula17.jpg" alt="Paula 17">
+        <img src="assets/paula18.jpg" alt="Paula 18">
+        <img src="assets/paula19.jpg" alt="Paula 19">
+        <img src="assets/paula20.jpg" alt="Paula 20">
+       <img src="assets/paula21.jpg" alt="Paula 21">
+        <img src="assets/paula22.jpg" alt="Paula 22">
+        
+       
+       
+    </div>
 </main>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <button class="close" id="closeBtn">&times;</button>
+    <button class="prev" id="prevBtn">&#10094;</button>
+    <img src="" alt="Fullscreen Bild" id="lightboxImg">
+    <button class="next" id="nextBtn">&#10095;</button>
+</div>
+
+<script>
+    const galleryImages = document.querySelectorAll('.gallery img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const closeBtn = document.getElementById('closeBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+        currentIndex = index;
+        lightboxImg.src = galleryImages[currentIndex].src;
+        lightbox.classList.add('active');
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+    }
+
+    function showPrev() {
+        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        lightboxImg.src = galleryImages[currentIndex].src;
+    }
+
+    function showNext() {
+        currentIndex = (currentIndex + 1) % galleryImages.length;
+        lightboxImg.src = galleryImages[currentIndex].src;
+    }
+
+    galleryImages.forEach((img, index) => {
+        img.addEventListener('click', () => openLightbox(index));
+    });
+
+    closeBtn.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', showPrev);
+    nextBtn.addEventListener('click', showNext);
+
+    // ESC-Taste schließt Lightbox
+    document.addEventListener('keydown', (e) => {
+        if(e.key === 'Escape') closeLightbox();
+        if(e.key === 'ArrowLeft') showPrev();
+        if(e.key === 'ArrowRight') showNext();
+    });
+</script>
 
 </body>
 </html>
