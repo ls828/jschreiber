@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://jschreiber.biz/</loc>
   </url>
 
   <url>
-    <loc>https://jschreiber.biz/about/</loc>
+    <loc>https://jschreiber.biz/about.html</loc>
   </url>
 
   <url>
-    <loc>https://jschreiber.biz/exhibitions/</loc>
+    <loc>https://jschreiber.biz/exhibitions.html</loc>
   </url>
-  
-    <url>
-    <loc>https://jschreiber.biz/contact/</loc>
+
+  <url>
+    <loc>https://jschreiber.biz/contact.html</loc>
+  </url>
+
+  <url>
+    <loc>https://jschreiber.biz/imprint.html</loc>
+  </url>
+
+  <url>
+    <loc>https://jschreiber.biz/paula.html</loc>
   </url>
 
 </urlset>
