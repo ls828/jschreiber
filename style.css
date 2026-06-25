@@ -97,3 +97,18 @@ main a:hover {
     padding: 8px;
     font-size: 1rem;
 }
+@keyframes greenBlink {
+    0%, 100% {
+        color: #00aa00;
+        text-shadow: 0 0 5px #00aa00;
+    }
+    50% {
+        color: #7fff7f;
+        text-shadow: 0 0 15px #7fff7f;
+    }
+}
+
+.stefan-highlight {
+    animation: greenBlink 1.2s infinite;
+    font-weight: bold;
+}
