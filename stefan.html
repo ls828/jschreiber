@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,216 +8,6 @@
     <title>Stefan Sandner, "There's a better way to spend an afternoon", 1.7.-9.7.2026</title>
 
     <link rel="stylesheet" href="style.css">
-
-    <style>
-
-        /* ========================================
-           AUSSTELLUNGS-GALERIE
-           ======================================== */
-
-        .gallery {
-            width: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
-        /*
-         * Jedes Bild bekommt exakt eine Bildschirmhöhe.
-         * Dadurch gibt es zwischen den Bildern keine
-         * zufälligen Abstände.
-         */
-
-        .gallery img {
-            display: block;
-
-            width: 100%;
-            height: 100svh;
-
-            object-fit: contain;
-
-            margin: 0;
-            padding: 0;
-
-            cursor: pointer;
-        }
-
-
-        /* ========================================
-           ANKÜNDIGUNGSBILD
-           ======================================== */
-
-        .announcement-image {
-            display: block;
-
-            width: 100%;
-            height: auto;
-
-            margin: 0;
-            padding: 0;
-
-            cursor: pointer;
-        }
-
-
-        /* ========================================
-           TEXT NACH DER GALERIE
-           ======================================== */
-
-        .announcement {
-            padding: 40px 20px 80px;
-        }
-
-        .announcement h2 {
-            margin-top: 0;
-        }
-
-        .announcement p {
-            margin: 0 0 10px;
-        }
-
-
-        /* ========================================
-           LIGHTBOX
-           ======================================== */
-
-        .lightbox {
-            position: fixed;
-            inset: 0;
-
-            width: 100%;
-            height: 100%;
-
-            background: rgba(0, 0, 0, 0.92);
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            visibility: hidden;
-            opacity: 0;
-
-            transition: opacity 0.2s ease;
-
-            z-index: 1000;
-        }
-
-        .lightbox.active {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        .lightbox img {
-            display: block;
-
-            max-width: 92vw;
-            max-height: 92vh;
-
-            width: auto;
-            height: auto;
-
-            object-fit: contain;
-        }
-
-
-        /* ========================================
-           LIGHTBOX BUTTONS
-           ======================================== */
-
-        .lightbox button {
-            position: absolute;
-
-            color: white;
-            background: rgba(0, 0, 0, 0.45);
-
-            border: none;
-
-            cursor: pointer;
-
-            z-index: 1001;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .prev,
-        .next {
-            top: 50%;
-
-            transform: translateY(-50%);
-
-            width: 50px;
-            height: 70px;
-
-            font-size: 32px;
-        }
-
-        .prev {
-            left: 20px;
-        }
-
-        .next {
-            right: 20px;
-        }
-
-        .close {
-            top: 20px;
-            right: 20px;
-
-            width: 50px;
-            height: 50px;
-
-            font-size: 32px;
-        }
-
-        .lightbox button:hover {
-            background: rgba(0, 0, 0, 0.75);
-        }
-
-
-        /* ========================================
-           MOBILE
-           ======================================== */
-
-        @media (max-width: 600px) {
-
-            .gallery img {
-                height: 100svh;
-            }
-
-            .lightbox img {
-                max-width: 94vw;
-                max-height: 90vh;
-            }
-
-            .prev,
-            .next {
-                width: 40px;
-                height: 55px;
-
-                font-size: 25px;
-            }
-
-            .prev {
-                left: 5px;
-            }
-
-            .next {
-                right: 5px;
-            }
-
-            .close {
-                top: 10px;
-                right: 10px;
-
-                width: 40px;
-                height: 40px;
-
-                font-size: 26px;
-            }
-        }
-
-    </style>
 </head>
 
 
@@ -243,18 +34,14 @@
 
 <main>
 
-    <!-- ========================================
-         ÜBERSCHRIFT
-         ======================================== -->
+    <!-- ÜBERSCHRIFT -->
 
     <h1>
         Stefan Sandner, "There's a better way to spend an afternoon", 1.7.-9.7.2026
     </h1>
 
 
-    <!-- ========================================
-         AUSSTELLUNGSBILDER
-         ======================================== -->
+    <!-- AUSSTELLUNGSBILDER -->
 
     <div class="gallery">
 
@@ -378,9 +165,7 @@
     </div>
 
 
-    <!-- ========================================
-         ANKÜNDIGUNGSBILD
-         ======================================== -->
+    <!-- ANKÜNDIGUNGSBILD -->
 
     <img
         class="announcement-image"
@@ -389,9 +174,7 @@
     >
 
 
-    <!-- ========================================
-         EINLADUNG / TEXT
-         ======================================== -->
+    <!-- EINLADUNG / TEXT -->
 
     <div class="announcement">
 
@@ -422,9 +205,7 @@
 </main>
 
 
-<!-- ========================================
-     LIGHTBOX
-     ======================================== -->
+<!-- LIGHTBOX -->
 
 <div class="lightbox" id="lightbox">
 
@@ -459,10 +240,6 @@
 
 <script>
 
-    /* ========================================
-       ELEMENTE
-       ======================================== */
-
     const galleryImages =
         document.querySelectorAll('.gallery img');
 
@@ -485,9 +262,7 @@
     let currentIndex = 0;
 
 
-    /* ========================================
-       LIGHTBOX ÖFFNEN
-       ======================================== */
+    /* LIGHTBOX ÖFFNEN */
 
     function openLightbox(index) {
 
@@ -505,9 +280,7 @@
     }
 
 
-    /* ========================================
-       LIGHTBOX SCHLIESSEN
-       ======================================== */
+    /* LIGHTBOX SCHLIESSEN */
 
     function closeLightbox() {
 
@@ -517,9 +290,7 @@
     }
 
 
-    /* ========================================
-       VORHERIGES BILD
-       ======================================== */
+    /* VORHERIGES BILD */
 
     function showPrev() {
 
@@ -535,9 +306,7 @@
     }
 
 
-    /* ========================================
-       NÄCHSTES BILD
-       ======================================== */
+    /* NÄCHSTES BILD */
 
     function showNext() {
 
@@ -553,9 +322,7 @@
     }
 
 
-    /* ========================================
-       AUSSTELLUNGSBILDER ANKLICKBAR
-       ======================================== */
+    /* BILDER ANKLICKBAR */
 
     galleryImages.forEach((img, index) => {
 
@@ -566,9 +333,7 @@
     });
 
 
-    /* ========================================
-       BUTTONS
-       ======================================== */
+    /* BUTTONS */
 
     closeBtn.addEventListener(
         'click',
@@ -586,9 +351,7 @@
     );
 
 
-    /* ========================================
-       KLICK AUF SCHWARZEN BEREICH
-       ======================================== */
+    /* KLICK AUF SCHWARZEN BEREICH */
 
     lightbox.addEventListener('click', (event) => {
 
@@ -599,9 +362,7 @@
     });
 
 
-    /* ========================================
-       TASTATUR-NAVIGATION
-       ======================================== */
+    /* TASTATUR */
 
     document.addEventListener('keydown', (event) => {
 
