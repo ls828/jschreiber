@@ -3,46 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stefan Sandner, "There's a better way to spend an afternoon", 1.7.-9.7.2026"</title>
+
+    <title>Stefan Sandner, "There's a better way to spend an afternoon", 1.7.-9.7.2026</title>
+
     <link rel="stylesheet" href="style.css">
+
     <style>
-        /* Grid für Bilder */
+        /* ========================================
+           AUSSTELLUNGSBILDER
+           ======================================== */
+
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-            padding: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
+            width: 100%;
+            margin: 0;
+            padding: 0;
         }
 
         .gallery img {
+            display: block;
             width: 100%;
-            height: auto;
+            height: 100vh;
+            height: 100svh;
+            object-fit: contain;
+            margin: 0;
+            padding: 0;
             cursor: pointer;
-            object-fit: cover;
-            border-radius: 0px;
-            transition: transform 0.3s;
         }
 
-        .gallery img:hover {
-            transform: scale(1.05);
+
+        /* ========================================
+           EINLADUNG / ANKÜNDIGUNG
+           ======================================== */
+
+        .announcement {
+            padding: 40px 20px 80px;
         }
 
-        /* Lightbox/Fullscreen */
+        .announcement p {
+            margin: 0 0 10px;
+        }
+
+
+        /* ========================================
+           LIGHTBOX
+           ======================================== */
+
         .lightbox {
             position: fixed;
-            top: 0;
-            left: 0;
+            inset: 0;
+
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.9);
+
+            background: rgba(0, 0, 0, 0.92);
+
             display: flex;
             justify-content: center;
             align-items: center;
+
             visibility: hidden;
             opacity: 0;
-            transition: opacity 0.3s;
+
+            transition: opacity 0.2s ease;
+
             z-index: 1000;
         }
 
@@ -52,119 +75,383 @@
         }
 
         .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 5px;
+            max-width: 92vw;
+            max-height: 92vh;
+
+            width: auto;
+            height: auto;
+
+            object-fit: contain;
         }
 
-        /* Navigation Buttons */
-        .prev, .next, .close {
+
+        /* ========================================
+           LIGHTBOX BUTTONS
+           ======================================== */
+
+        .lightbox button {
             position: absolute;
+
+            color: white;
+            background: rgba(0, 0, 0, 0.45);
+
+            border: none;
+
+            cursor: pointer;
+
+            z-index: 1001;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .prev,
+        .next {
             top: 50%;
             transform: translateY(-50%);
-            color: white;
-            font-size: 2rem;
-            background: rgba(0,0,0,0.5);
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 5px;
+
+            width: 50px;
+            height: 70px;
+
+            font-size: 32px;
         }
 
-        .prev { left: 20px; }
-        .next { right: 20px; }
-        .close { top: 20px; right: 20px; transform: none; }
+        .prev {
+            left: 20px;
+        }
 
-        .prev:hover, .next:hover, .close:hover {
-            background: rgba(255,0,0,0.8);
+        .next {
+            right: 20px;
+        }
+
+        .close {
+            top: 20px;
+            right: 20px;
+
+            width: 50px;
+            height: 50px;
+
+            font-size: 32px;
+        }
+
+        .lightbox button:hover {
+            background: rgba(0, 0, 0, 0.75);
+        }
+
+
+        /* ========================================
+           MOBILE
+           ======================================== */
+
+        @media (max-width: 600px) {
+
+            .lightbox img {
+                max-width: 94vw;
+                max-height: 90vh;
+            }
+
+            .prev,
+            .next {
+                width: 40px;
+                height: 55px;
+                font-size: 25px;
+            }
+
+            .prev {
+                left: 5px;
+            }
+
+            .next {
+                right: 5px;
+            }
+
+            .close {
+                top: 10px;
+                right: 10px;
+
+                width: 40px;
+                height: 40px;
+
+                font-size: 26px;
+            }
         }
     </style>
 </head>
+
+
 <body>
- <header>
-          <div class="logo"><a href="index.html">J.Schreiber</a></div>
 
+<header>
 
-        <nav>
-            <a href="exhibitions.html">Exhibitions</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="imprint.html">Imprint</a>
-        </nav>
-    </header>
-<div class="red-bar"></div>
-
-<main>
-    <h1> Stefan Sandner, "There's a better way to spend an afternoon", 1.7.-9.7.2026</h1>
-    <h2>J. Schreiber lädt zur Finisage am Donnerstag 9.7.26 von 15:00 - 20:00!</h2>
-
-    <div class="gallery">
-        
-        <img src="assets/stefan_ankuendigung.jpg" alt="Stefan 01">
-        
+    <div class="logo">
+        <a href="index.html">J.Schreiber</a>
     </div>
 
-    <p>J.Schreiber freut sich die Ausstellung „There’s a better way to spend an afternoon” von Stefan Sandner </p>
-     <p>   am 1.7. ab 18:00 zu eröffnen.</p>
-       <p> 
-        1.7-9.7. </p>
-        <p>Meiselstraße 63/24 </p>
-        <p>1140 Wien</p>
-    
+    <nav>
+        <a href="exhibitions.html">Exhibitions</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="imprint.html">Imprint</a>
+    </nav>
+
+</header>
+
+
+<div class="red-bar"></div>
+
+
+<main>
+
+    <!-- ========================================
+         AUSSTELLUNGSTITEL
+         ======================================== -->
+
+    <h1>
+        Stefan Sandner, "There's a better way to spend an afternoon", 1.7.-9.7.2026
+    </h1>
+
+
+    <!-- ========================================
+         AUSSTELLUNGSBILDER
+         ======================================== -->
+
+    <div class="gallery">
+
+        <img src="assets/Stefan_01.jpg" alt="Stefan Sandner Ausstellung, Bild 01">
+        <img src="assets/Stefan_02.jpg" alt="Stefan Sandner Ausstellung, Bild 02">
+        <img src="assets/Stefan_03.jpg" alt="Stefan Sandner Ausstellung, Bild 03">
+        <img src="assets/Stefan_04.jpg" alt="Stefan Sandner Ausstellung, Bild 04">
+        <img src="assets/Stefan_05.jpg" alt="Stefan Sandner Ausstellung, Bild 05">
+        <img src="assets/Stefan_06.jpg" alt="Stefan Sandner Ausstellung, Bild 06">
+        <img src="assets/Stefan_07.jpg" alt="Stefan Sandner Ausstellung, Bild 07">
+        <img src="assets/Stefan_08.jpg" alt="Stefan Sandner Ausstellung, Bild 08">
+        <img src="assets/Stefan_09.jpg" alt="Stefan Sandner Ausstellung, Bild 09">
+        <img src="assets/Stefan_10.jpg" alt="Stefan Sandner Ausstellung, Bild 10">
+        <img src="assets/Stefan_11.jpg" alt="Stefan Sandner Ausstellung, Bild 11">
+        <img src="assets/Stefan_12.jpg" alt="Stefan Sandner Ausstellung, Bild 12">
+        <img src="assets/Stefan_13.jpg" alt="Stefan Sandner Ausstellung, Bild 13">
+        <img src="assets/Stefan_14.jpg" alt="Stefan Sandner Ausstellung, Bild 14">
+        <img src="assets/Stefan_15.jpg" alt="Stefan Sandner Ausstellung, Bild 15">
+        <img src="assets/Stefan_16.jpg" alt="Stefan Sandner Ausstellung, Bild 16">
+        <img src="assets/Stefan_17.jpg" alt="Stefan Sandner Ausstellung, Bild 17">
+        <img src="assets/Stefan_18.jpg" alt="Stefan Sandner Ausstellung, Bild 18">
+        <img src="assets/Stefan_19.jpg" alt="Stefan Sandner Ausstellung, Bild 19">
+        <img src="assets/Stefan_20.jpg" alt="Stefan Sandner Ausstellung, Bild 20">
+        <img src="assets/Stefan_21.jpg" alt="Stefan Sandner Ausstellung, Bild 21">
+        <img src="assets/Stefan_22.jpg" alt="Stefan Sandner Ausstellung, Bild 22">
+        <img src="assets/Stefan_23.jpg" alt="Stefan Sandner Ausstellung, Bild 23">
+        <img src="assets/Stefan_24.jpg" alt="Stefan Sandner Ausstellung, Bild 24">
+        <img src="assets/Stefan_25.jpg" alt="Stefan Sandner Ausstellung, Bild 25">
+        <img src="assets/Stefan_26.jpg" alt="Stefan Sandner Ausstellung, Bild 26">
+        <img src="assets/Stefan_27.jpg" alt="Stefan Sandner Ausstellung, Bild 27">
+        <img src="assets/Stefan_28.jpg" alt="Stefan Sandner Ausstellung, Bild 28">
+        <img src="assets/Stefan_29.jpg" alt="Stefan Sandner Ausstellung, Bild 29">
+        <img src="assets/Stefan_30.jpg" alt="Stefan Sandner Ausstellung, Bild 30">
+        <img src="assets/Stefan_31.jpg" alt="Stefan Sandner Ausstellung, Bild 31">
+        <img src="assets/Stefan_32.jpg" alt="Stefan Sandner Ausstellung, Bild 32">
+        <img src="assets/Stefan_33.jpg" alt="Stefan Sandner Ausstellung, Bild 33">
+        <img src="assets/Stefan_34.jpg" alt="Stefan Sandner Ausstellung, Bild 34">
+        <img src="assets/Stefan_35.jpg" alt="Stefan Sandner Ausstellung, Bild 35">
+        <img src="assets/Stefan_36.jpg" alt="Stefan Sandner Ausstellung, Bild 36">
+        <img src="assets/Stefan_37.jpg" alt="Stefan Sandner Ausstellung, Bild 37">
+        <img src="assets/Stefan_38.jpg" alt="Stefan Sandner Ausstellung, Bild 38">
+        <img src="assets/Stefan_39.jpg" alt="Stefan Sandner Ausstellung, Bild 39">
+
+    </div>
+
+
+    <!-- ========================================
+         EINLADUNG / ANKÜNDIGUNG
+         ======================================== -->
+
+    <div class="announcement">
+
+        <h2>
+            J. Schreiber lädt zur Finisage am Donnerstag 9.7.26 von 15:00 - 20:00!
+        </h2>
+
+        <p>
+            J.Schreiber freut sich die Ausstellung
+            „There’s a better way to spend an afternoon” von Stefan Sandner
+        </p>
+
+        <p>
+            am 1.7. ab 18:00 zu eröffnen.
+        </p>
+
+        <p>
+            1.7.-9.7.
+        </p>
+
+        <p>
+            Meiselstraße 63/24<br>
+            1140 Wien
+        </p>
+
+    </div>
+
 </main>
 
-<!-- Lightbox -->
+
+<!-- ========================================
+     LIGHTBOX
+     ======================================== -->
+
 <div class="lightbox" id="lightbox">
-    <button class="close" id="closeBtn">&times;</button>
-    <button class="prev" id="prevBtn">&#10094;</button>
-    <img src="" alt="Fullscreen Bild" id="lightboxImg">
-    <button class="next" id="nextBtn">&#10095;</button>
+
+    <button class="close" id="closeBtn" aria-label="Schließen">
+        &times;
+    </button>
+
+    <button class="prev" id="prevBtn" aria-label="Vorheriges Bild">
+        &#10094;
+    </button>
+
+    <img src="" alt="" id="lightboxImg">
+
+    <button class="next" id="nextBtn" aria-label="Nächstes Bild">
+        &#10095;
+    </button>
+
 </div>
 
+
 <script>
+
     const galleryImages = document.querySelectorAll('.gallery img');
+
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
+
     const closeBtn = document.getElementById('closeBtn');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
 
     let currentIndex = 0;
 
+
+    /* ========================================
+       LIGHTBOX ÖFFNEN
+       ======================================== */
+
     function openLightbox(index) {
+
         currentIndex = index;
+
         lightboxImg.src = galleryImages[currentIndex].src;
+        lightboxImg.alt = galleryImages[currentIndex].alt;
+
         lightbox.classList.add('active');
+
+        /* Hintergrundseite nicht mehr scrollen */
+        document.body.style.overflow = 'hidden';
     }
+
+
+    /* ========================================
+       LIGHTBOX SCHLIESSEN
+       ======================================== */
 
     function closeLightbox() {
+
         lightbox.classList.remove('active');
+
+        document.body.style.overflow = '';
     }
+
+
+    /* ========================================
+       VORHERIGES BILD
+       ======================================== */
 
     function showPrev() {
-        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+
+        currentIndex =
+            (currentIndex - 1 + galleryImages.length)
+            % galleryImages.length;
+
         lightboxImg.src = galleryImages[currentIndex].src;
+        lightboxImg.alt = galleryImages[currentIndex].alt;
     }
+
+
+    /* ========================================
+       NÄCHSTES BILD
+       ======================================== */
 
     function showNext() {
-        currentIndex = (currentIndex + 1) % galleryImages.length;
+
+        currentIndex =
+            (currentIndex + 1)
+            % galleryImages.length;
+
         lightboxImg.src = galleryImages[currentIndex].src;
+        lightboxImg.alt = galleryImages[currentIndex].alt;
     }
 
+
+    /* ========================================
+       BILDER ANKLICKBAR MACHEN
+       ======================================== */
+
     galleryImages.forEach((img, index) => {
-        img.addEventListener('click', () => openLightbox(index));
+
+        img.addEventListener('click', () => {
+            openLightbox(index);
+        });
+
     });
+
+
+    /* ========================================
+       BUTTONS
+       ======================================== */
 
     closeBtn.addEventListener('click', closeLightbox);
+
     prevBtn.addEventListener('click', showPrev);
+
     nextBtn.addEventListener('click', showNext);
 
-    // ESC-Taste schließt Lightbox
-    document.addEventListener('keydown', (e) => {
-        if(e.key === 'Escape') closeLightbox();
-        if(e.key === 'ArrowLeft') showPrev();
-        if(e.key === 'ArrowRight') showNext();
+
+    /* ========================================
+       KLICK AUF HINTERGRUND SCHLIESST LIGHTBOX
+       ======================================== */
+
+    lightbox.addEventListener('click', (event) => {
+
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+
     });
+
+
+    /* ========================================
+       TASTATUR-NAVIGATION
+       ======================================== */
+
+    document.addEventListener('keydown', (event) => {
+
+        if (!lightbox.classList.contains('active')) {
+            return;
+        }
+
+        if (event.key === 'Escape') {
+            closeLightbox();
+        }
+
+        if (event.key === 'ArrowLeft') {
+            showPrev();
+        }
+
+        if (event.key === 'ArrowRight') {
+            showNext();
+        }
+
+    });
+
 </script>
 
 </body>
