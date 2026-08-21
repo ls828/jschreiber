@@ -25,6 +25,11 @@ header {
     font-weight: bold;
 }
 
+.logo a {
+    color: red;
+    text-decoration: none;
+}
+
 
 /* ========================================
    NAVIGATION
@@ -67,9 +72,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     width: 100%;
-
     margin-top: 50px;
 }
 
@@ -135,7 +138,8 @@ main a:hover {
 
 @keyframes greenBlink {
 
-    0%, 100% {
+    0%,
+    100% {
         color: #00aa00;
         text-shadow: 0 0 5px #00aa00;
     }
@@ -144,6 +148,7 @@ main a:hover {
         color: #7fff7f;
         text-shadow: 0 0 15px #7fff7f;
     }
+
 }
 
 .stefan-highlight {
@@ -153,16 +158,77 @@ main a:hover {
 
 
 /* ========================================
-   STEFAN SANDNER – BILDSTRECKE
+   VIDEO-HINTERGRUND
    ======================================== */
 
-.gallery {
+.video-background {
+    position: relative;
     width: 100%;
-    margin: 0;
-    padding: 0;
+    overflow: hidden;
 }
 
-.gallery img {
+
+/*
+   Die Videos liegen hinter den Bildern.
+   Die Höhe eines Videos entspricht 20vh.
+
+   5 Videos ergeben zusammen genau 100vh.
+   Danach beginnt die nächste Sequenz wieder
+   mit Video 01.
+*/
+
+.video-wall {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+
+/* Jedes Video */
+
+.video-wall video {
+    display: block;
+
+    width: 100%;
+    height: 20vh;
+
+    object-fit: cover;
+
+    margin: 0;
+    padding: 0;
+
+    pointer-events: none;
+}
+
+
+/* ========================================
+   BILDSTRECKE
+   ======================================== */
+
+.video-background .gallery {
+    position: relative;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    z-index: 1;
+}
+
+
+/*
+   Die Fotos behalten ihre natürlichen
+   Proportionen.
+*/
+
+.video-background .gallery img {
     display: block;
 
     width: 100%;
@@ -172,9 +238,33 @@ main a:hover {
     padding: 0;
 
     cursor: pointer;
+
+    /*
+       Foto ist standardmäßig transparent,
+       damit die Videos dahinter sichtbar sind.
+    */
+
+    opacity: 0.15;
+
+    transition: opacity 0.3s ease;
 }
 
-.gallery img:last-child {
+
+/*
+   Sobald die Maus über dem jeweiligen Bild ist,
+   wird das Bild vollständig sichtbar.
+*/
+
+.video-background .gallery img:hover {
+    opacity: 1;
+}
+
+
+/*
+   Beim letzten Bild kein zusätzlicher Abstand.
+*/
+
+.video-background .gallery img:last-child {
     margin-bottom: 0;
 }
 
@@ -219,6 +309,7 @@ main a:hover {
 
 .lightbox {
     position: fixed;
+
     inset: 0;
 
     width: 100%;
@@ -238,10 +329,14 @@ main a:hover {
     z-index: 1000;
 }
 
+
 .lightbox.active {
     visibility: visible;
     opacity: 1;
 }
+
+
+/* Großes Bild */
 
 .lightbox img {
     display: block;
@@ -253,6 +348,8 @@ main a:hover {
     height: auto;
 
     object-fit: contain;
+
+    opacity: 1;
 }
 
 
@@ -264,6 +361,7 @@ main a:hover {
     position: absolute;
 
     color: white;
+
     background: rgba(0, 0, 0, 0.45);
 
     border: none;
@@ -273,9 +371,11 @@ main a:hover {
     z-index: 1001;
 
     display: flex;
+
     justify-content: center;
     align-items: center;
 }
+
 
 .prev,
 .next {
@@ -289,6 +389,7 @@ main a:hover {
     font-size: 32px;
 }
 
+
 .prev {
     left: 20px;
 }
@@ -296,6 +397,7 @@ main a:hover {
 .next {
     right: 20px;
 }
+
 
 .close {
     top: 20px;
@@ -306,6 +408,7 @@ main a:hover {
 
     font-size: 32px;
 }
+
 
 .lightbox button:hover {
     background: rgba(0, 0, 0, 0.75);
@@ -318,10 +421,35 @@ main a:hover {
 
 @media (max-width: 600px) {
 
+    header {
+        padding: 10px;
+    }
+
+    nav {
+        gap: 1rem;
+        margin-left: auto;
+    }
+
+    nav a {
+        font-size: 0.85rem;
+    }
+
+
+    /*
+       Auch mobil bleiben die fünf Videos
+       eine wiederholende Sequenz.
+    */
+
+    .video-wall video {
+        height: 20vh;
+    }
+
+
     .lightbox img {
         max-width: 94vw;
         max-height: 90vh;
     }
+
 
     .prev,
     .next {
@@ -331,6 +459,7 @@ main a:hover {
         font-size: 25px;
     }
 
+
     .prev {
         left: 5px;
     }
@@ -338,6 +467,7 @@ main a:hover {
     .next {
         right: 5px;
     }
+
 
     .close {
         top: 10px;
@@ -348,4 +478,5 @@ main a:hover {
 
         font-size: 26px;
     }
+
 }
