@@ -12,6 +12,7 @@
 <body>
 
 <header>
+
     <div class="logo">
         <a href="index.html">J.Schreiber</a>
     </div>
@@ -22,12 +23,18 @@
         <a href="contact.html">Contact</a>
         <a href="imprint.html">Imprint</a>
     </nav>
+
 </header>
+
 
 <div class="red-bar"></div>
 
 
 <main>
+
+    <!-- =========================================
+         AUSSTELLUNGSTITEL
+         ========================================= -->
 
     <h1>
         Stefan Sandner, "There's a better way to spend an afternoon", 1.7.-9.7.2026
@@ -35,59 +42,234 @@
 
 
     <!-- =========================================
-         VIDEO-HINTERGRUND + BILDSTRECKE
+         VIDEO + BILDSTRECKE
          ========================================= -->
 
     <div class="video-background">
 
-        <!-- Hier erzeugt JavaScript automatisch
-             so viele Wiederholungen der 5 Videos,
-             wie für die gesamte Bildstrecke benötigt werden. -->
-        <div class="video-wall" id="videoWall"></div>
+
+        <!-- =====================================
+             FIXIERTES VIDEO
+             ===================================== -->
+
+        <div class="video-wall">
+
+            <video
+                autoplay
+                muted
+                loop
+                playsinline
+                aria-hidden="true"
+            >
+                <source
+                    src="assets/Stefan_Video_01.mp4"
+                    type="video/mp4"
+                >
+            </video>
+
+        </div>
 
 
-        <!-- BILDSTRECKE -->
+        <!-- =====================================
+             BILDSTRECKE
+             ===================================== -->
+
         <div class="gallery">
 
-            <img src="assets/Stefan_01.jpg" alt="Stefan Sandner Ausstellung, Bild 01">
-            <img src="assets/Stefan_02.jpg" alt="Stefan Sandner Ausstellung, Bild 02">
-            <img src="assets/Stefan_03.jpg" alt="Stefan Sandner Ausstellung, Bild 03">
-            <img src="assets/Stefan_04.jpg" alt="Stefan Sandner Ausstellung, Bild 04">
-            <img src="assets/Stefan_05.jpg" alt="Stefan Sandner Ausstellung, Bild 05">
-            <img src="assets/Stefan_06.jpg" alt="Stefan Sandner Ausstellung, Bild 06">
-            <img src="assets/Stefan_07.jpg" alt="Stefan Sandner Ausstellung, Bild 07">
-            <img src="assets/Stefan_08.jpg" alt="Stefan Sandner Ausstellung, Bild 08">
-            <img src="assets/Stefan_09.jpg" alt="Stefan Sandner Ausstellung, Bild 09">
-            <img src="assets/Stefan_10.jpg" alt="Stefan Sandner Ausstellung, Bild 10">
-            <img src="assets/Stefan_11.jpg" alt="Stefan Sandner Ausstellung, Bild 11">
-            <img src="assets/Stefan_12.jpg" alt="Stefan Sandner Ausstellung, Bild 12">
-            <img src="assets/Stefan_13.jpg" alt="Stefan Sandner Ausstellung, Bild 13">
-            <img src="assets/Stefan_14.jpg" alt="Stefan Sandner Ausstellung, Bild 14">
-            <img src="assets/Stefan_15.jpg" alt="Stefan Sandner Ausstellung, Bild 15">
-            <img src="assets/Stefan_16.jpg" alt="Stefan Sandner Ausstellung, Bild 16">
-            <img src="assets/Stefan_17.jpg" alt="Stefan Sandner Ausstellung, Bild 17">
-            <img src="assets/Stefan_18.jpg" alt="Stefan Sandner Ausstellung, Bild 18">
-            <img src="assets/Stefan_19.jpg" alt="Stefan Sandner Ausstellung, Bild 19">
-            <img src="assets/Stefan_20.jpg" alt="Stefan Sandner Ausstellung, Bild 20">
-            <img src="assets/Stefan_21.jpg" alt="Stefan Sandner Ausstellung, Bild 21">
-            <img src="assets/Stefan_22.jpg" alt="Stefan Sandner Ausstellung, Bild 22">
-            <img src="assets/Stefan_23.jpg" alt="Stefan Sandner Ausstellung, Bild 23">
-            <img src="assets/Stefan_24.jpg" alt="Stefan Sandner Ausstellung, Bild 24">
-            <img src="assets/Stefan_25.jpg" alt="Stefan Sandner Ausstellung, Bild 25">
-            <img src="assets/Stefan_26.jpg" alt="Stefan Sandner Ausstellung, Bild 26">
-            <img src="assets/Stefan_27.jpg" alt="Stefan Sandner Ausstellung, Bild 27">
-            <img src="assets/Stefan_28.jpg" alt="Stefan Sandner Ausstellung, Bild 28">
-            <img src="assets/Stefan_29.jpg" alt="Stefan Sandner Ausstellung, Bild 29">
-            <img src="assets/Stefan_30.jpg" alt="Stefan Sandner Ausstellung, Bild 30">
-            <img src="assets/Stefan_31.jpg" alt="Stefan Sandner Ausstellung, Bild 31">
-            <img src="assets/Stefan_32.jpg" alt="Stefan Sandner Ausstellung, Bild 32">
-            <img src="assets/Stefan_33.jpg" alt="Stefan Sandner Ausstellung, Bild 33">
-            <img src="assets/Stefan_34.jpg" alt="Stefan Sandner Ausstellung, Bild 34">
-            <img src="assets/Stefan_35.jpg" alt="Stefan Sandner Ausstellung, Bild 35">
-            <img src="assets/Stefan_36.jpg" alt="Stefan Sandner Ausstellung, Bild 36">
-            <img src="assets/Stefan_37.jpg" alt="Stefan Sandner Ausstellung, Bild 37">
-            <img src="assets/Stefan_38.jpg" alt="Stefan Sandner Ausstellung, Bild 38">
-            <img src="assets/Stefan_39.jpg" alt="Stefan Sandner Ausstellung, Bild 39">
+            <img
+                src="assets/Stefan_01.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 01"
+            >
+
+            <img
+                src="assets/Stefan_02.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 02"
+            >
+
+            <img
+                src="assets/Stefan_03.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 03"
+            >
+
+            <img
+                src="assets/Stefan_04.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 04"
+            >
+
+            <img
+                src="assets/Stefan_05.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 05"
+            >
+
+            <img
+                src="assets/Stefan_06.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 06"
+            >
+
+            <img
+                src="assets/Stefan_07.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 07"
+            >
+
+            <img
+                src="assets/Stefan_08.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 08"
+            >
+
+            <img
+                src="assets/Stefan_09.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 09"
+            >
+
+            <img
+                src="assets/Stefan_10.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 10"
+            >
+
+            <img
+                src="assets/Stefan_11.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 11"
+            >
+
+            <img
+                src="assets/Stefan_12.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 12"
+            >
+
+            <img
+                src="assets/Stefan_13.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 13"
+            >
+
+            <img
+                src="assets/Stefan_14.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 14"
+            >
+
+            <img
+                src="assets/Stefan_15.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 15"
+            >
+
+            <img
+                src="assets/Stefan_16.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 16"
+            >
+
+            <img
+                src="assets/Stefan_17.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 17"
+            >
+
+            <img
+                src="assets/Stefan_18.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 18"
+            >
+
+            <img
+                src="assets/Stefan_19.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 19"
+            >
+
+            <img
+                src="assets/Stefan_20.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 20"
+            >
+
+            <img
+                src="assets/Stefan_21.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 21"
+            >
+
+            <img
+                src="assets/Stefan_22.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 22"
+            >
+
+            <img
+                src="assets/Stefan_23.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 23"
+            >
+
+            <img
+                src="assets/Stefan_24.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 24"
+            >
+
+            <img
+                src="assets/Stefan_25.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 25"
+            >
+
+            <img
+                src="assets/Stefan_26.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 26"
+            >
+
+            <img
+                src="assets/Stefan_27.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 27"
+            >
+
+            <img
+                src="assets/Stefan_28.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 28"
+            >
+
+            <img
+                src="assets/Stefan_29.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 29"
+            >
+
+            <img
+                src="assets/Stefan_30.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 30"
+            >
+
+            <img
+                src="assets/Stefan_31.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 31"
+            >
+
+            <img
+                src="assets/Stefan_32.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 32"
+            >
+
+            <img
+                src="assets/Stefan_33.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 33"
+            >
+
+            <img
+                src="assets/Stefan_34.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 34"
+            >
+
+            <img
+                src="assets/Stefan_35.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 35"
+            >
+
+            <img
+                src="assets/Stefan_36.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 36"
+            >
+
+            <img
+                src="assets/Stefan_37.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 37"
+            >
+
+            <img
+                src="assets/Stefan_38.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 38"
+            >
+
+            <img
+                src="assets/Stefan_39.jpg"
+                alt="Stefan Sandner Ausstellung, Bild 39"
+            >
 
         </div>
 
@@ -95,7 +277,7 @@
 
 
     <!-- =========================================
-         ANKÜNDIGUNG
+         ANKÜNDIGUNGSBILD
          ========================================= -->
 
     <img
@@ -105,6 +287,10 @@
     >
 
 
+    <!-- =========================================
+         ANKÜNDIGUNGSTEXT
+         ========================================= -->
+
     <div class="announcement">
 
         <h2>
@@ -112,7 +298,8 @@
         </h2>
 
         <p>
-            J.Schreiber freut sich die Ausstellung „There’s a better way to spend an afternoon”
+            J.Schreiber freut sich die Ausstellung
+            „There’s a better way to spend an afternoon”
             von Stefan Sandner
         </p>
 
@@ -148,6 +335,7 @@
         &times;
     </button>
 
+
     <button
         class="prev"
         id="prevBtn"
@@ -156,11 +344,13 @@
         &#10094;
     </button>
 
+
     <img
         src=""
         alt=""
         id="lightboxImg"
     >
+
 
     <button
         class="next"
@@ -173,76 +363,11 @@
 </div>
 
 
+<!-- =========================================
+     JAVASCRIPT
+     ========================================= -->
+
 <script>
-
-/* =========================================
-   VIDEO-WIEDERHOLUNG
-   ========================================= */
-
-const videoWall = document.getElementById("videoWall");
-
-const videoFiles = [
-    "assets/Stefan_Video_01.mp4",
-    "assets/Stefan_Video_02.mp4",
-    "assets/Stefan_Video_03.mp4",
-    "assets/Stefan_Video_04.mp4",
-    "assets/Stefan_Video_05.mp4"
-];
-
-
-/*
-   Eine Sequenz besteht aus 5 Videos.
-
-   Die Videos werden untereinander angeordnet.
-   Sobald die Bildstrecke länger ist als eine
-   Sequenz, wird die Sequenz automatisch wiederholt.
-*/
-
-function createVideoSequence() {
-
-    videoWall.innerHTML = "";
-
-    const gallery = document.querySelector(".gallery");
-
-    if (!gallery) return;
-
-    const galleryHeight = gallery.offsetHeight;
-
-    /*
-       Ein einzelnes Video bekommt 20vh.
-       5 Videos = 100vh pro Wiederholung.
-    */
-
-    const viewportHeight = window.innerHeight;
-
-    const sequenceHeight = viewportHeight;
-
-    const numberOfSequences =
-        Math.ceil(galleryHeight / sequenceHeight) + 1;
-
-
-    for (let sequence = 0; sequence < numberOfSequences; sequence++) {
-
-        videoFiles.forEach(function(file) {
-
-            const video = document.createElement("video");
-
-            video.src = file;
-            video.autoplay = true;
-            video.muted = true;
-            video.loop = true;
-            video.playsInline = true;
-
-            video.setAttribute("aria-hidden", "true");
-
-            videoWall.appendChild(video);
-
-        });
-
-    }
-
-}
-
 
 /* =========================================
    LIGHTBOX
@@ -251,20 +376,28 @@ function createVideoSequence() {
 const galleryImages = document.querySelectorAll(".gallery img");
 
 const lightbox = document.getElementById("lightbox");
+
 const lightboxImg = document.getElementById("lightboxImg");
 
 const closeBtn = document.getElementById("closeBtn");
+
 const prevBtn = document.getElementById("prevBtn");
+
 const nextBtn = document.getElementById("nextBtn");
 
 let currentIndex = 0;
 
+
+/* =========================================
+   LIGHTBOX ÖFFNEN
+   ========================================= */
 
 function openLightbox(index) {
 
     currentIndex = index;
 
     lightboxImg.src = galleryImages[currentIndex].src;
+
     lightboxImg.alt = galleryImages[currentIndex].alt;
 
     lightbox.classList.add("active");
@@ -272,6 +405,10 @@ function openLightbox(index) {
     document.body.style.overflow = "hidden";
 }
 
+
+/* =========================================
+   LIGHTBOX SCHLIESSEN
+   ========================================= */
 
 function closeLightbox() {
 
@@ -281,16 +418,27 @@ function closeLightbox() {
 }
 
 
+/* =========================================
+   VORHERIGES BILD
+   ========================================= */
+
 function showPrev() {
 
     currentIndex =
         (currentIndex - 1 + galleryImages.length)
         % galleryImages.length;
 
-    lightboxImg.src = galleryImages[currentIndex].src;
-    lightboxImg.alt = galleryImages[currentIndex].alt;
+    lightboxImg.src =
+        galleryImages[currentIndex].src;
+
+    lightboxImg.alt =
+        galleryImages[currentIndex].alt;
 }
 
+
+/* =========================================
+   NÄCHSTES BILD
+   ========================================= */
 
 function showNext() {
 
@@ -298,12 +446,17 @@ function showNext() {
         (currentIndex + 1)
         % galleryImages.length;
 
-    lightboxImg.src = galleryImages[currentIndex].src;
-    lightboxImg.alt = galleryImages[currentIndex].alt;
+    lightboxImg.src =
+        galleryImages[currentIndex].src;
+
+    lightboxImg.alt =
+        galleryImages[currentIndex].alt;
 }
 
 
-/* Bilder anklickbar */
+/* =========================================
+   BILDER ANKLICKBAR
+   ========================================= */
 
 galleryImages.forEach(function(img, index) {
 
@@ -316,73 +469,76 @@ galleryImages.forEach(function(img, index) {
 });
 
 
-/* Buttons */
+/* =========================================
+   BUTTONS
+   ========================================= */
 
-closeBtn.addEventListener("click", closeLightbox);
+closeBtn.addEventListener(
+    "click",
+    closeLightbox
+);
 
-prevBtn.addEventListener("click", showPrev);
+prevBtn.addEventListener(
+    "click",
+    showPrev
+);
 
-nextBtn.addEventListener("click", showNext);
-
-
-/* Schwarzer Hintergrund schließt Lightbox */
-
-lightbox.addEventListener("click", function(event) {
-
-    if (event.target === lightbox) {
-
-        closeLightbox();
-
-    }
-
-});
-
-
-/* Tastatursteuerung */
-
-document.addEventListener("keydown", function(event) {
-
-    if (!lightbox.classList.contains("active")) return;
-
-    if (event.key === "Escape") {
-
-        closeLightbox();
-
-    }
-
-    if (event.key === "ArrowLeft") {
-
-        showPrev();
-
-    }
-
-    if (event.key === "ArrowRight") {
-
-        showNext();
-
-    }
-
-});
+nextBtn.addEventListener(
+    "click",
+    showNext
+);
 
 
 /* =========================================
-   VIDEO-HINTERGRUND NACH BILD-LADUNG
+   SCHWARZEN HINTERGRUND KLICKEN
    ========================================= */
 
-window.addEventListener("load", function() {
+lightbox.addEventListener(
+    "click",
+    function(event) {
 
-    createVideoSequence();
+        if (event.target === lightbox) {
 
-});
+            closeLightbox();
+
+        }
+
+    }
+);
 
 
-/* Bei Änderung der Fenstergröße neu berechnen */
+/* =========================================
+   TASTATUR
+   ========================================= */
 
-window.addEventListener("resize", function() {
+document.addEventListener(
+    "keydown",
+    function(event) {
 
-    createVideoSequence();
+        if (!lightbox.classList.contains("active")) {
+            return;
+        }
 
-});
+        if (event.key === "Escape") {
+
+            closeLightbox();
+
+        }
+
+        if (event.key === "ArrowLeft") {
+
+            showPrev();
+
+        }
+
+        if (event.key === "ArrowRight") {
+
+            showNext();
+
+        }
+
+    }
+);
 
 </script>
 
