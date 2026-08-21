@@ -137,7 +137,6 @@ main a:hover {
    ======================================== */
 
 @keyframes greenBlink {
-
     0%,
     100% {
         color: #00aa00;
@@ -148,7 +147,6 @@ main a:hover {
         color: #7fff7f;
         text-shadow: 0 0 15px #7fff7f;
     }
-
 }
 
 .stefan-highlight {
@@ -158,52 +156,48 @@ main a:hover {
 
 
 /* ========================================
-   VIDEO-HINTERGRUND
+   VIDEO-BEREICH
    ======================================== */
 
 .video-background {
     position: relative;
     width: 100%;
-    overflow: hidden;
 }
 
 
-/*
-   Die Videos liegen hinter den Bildern.
-   Die Höhe eines Videos entspricht 20vh.
-
-   5 Videos ergeben zusammen genau 100vh.
-   Danach beginnt die nächste Sequenz wieder
-   mit Video 01.
-*/
+/* ========================================
+   FIXIERTES VIDEO IN DER MITTE
+   ======================================== */
 
 .video-wall {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: fixed;
 
-    width: 100%;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 70vw;
+    height: 70vh;
 
     z-index: 0;
 
     pointer-events: none;
+
+    overflow: hidden;
 }
 
-
-/* Jedes Video */
 
 .video-wall video {
     display: block;
 
     width: 100%;
-    height: 20vh;
+    height: 100%;
 
-    object-fit: cover;
+    object-fit: contain;
 
     margin: 0;
     padding: 0;
-
-    pointer-events: none;
 }
 
 
@@ -214,25 +208,23 @@ main a:hover {
 .video-background .gallery {
     position: relative;
 
+    z-index: 1;
+
     width: 100%;
-   height: auto;
 
     margin: 0;
     padding: 0;
-
-    z-index: 1;
 }
 
 
-/*
-   Die Fotos behalten ihre natürlichen
-   Proportionen.
-*/
+/* ========================================
+   BILDER
+   ======================================== */
 
 .video-background .gallery img {
     display: block;
 
-    width: 50%;
+    width: 100%;
     height: auto;
 
     margin: 0 0 30px 0;
@@ -240,30 +232,20 @@ main a:hover {
 
     cursor: pointer;
 
-    /*
-       Foto ist standardmäßig transparent,
-       damit die Videos dahinter sichtbar sind.
-    */
-
     opacity: 0.15;
 
     transition: opacity 0.3s ease;
 }
 
 
-/*
-   Sobald die Maus über dem jeweiligen Bild ist,
-   wird das Bild vollständig sichtbar.
-*/
+/* Bild wird bei Hover vollständig sichtbar */
 
 .video-background .gallery img:hover {
     opacity: 1;
 }
 
 
-/*
-   Beim letzten Bild kein zusätzlicher Abstand.
-*/
+/* Letztes Bild ohne zusätzlichen Abstand */
 
 .video-background .gallery img:last-child {
     margin-bottom: 0;
@@ -319,6 +301,7 @@ main a:hover {
     background: rgba(0, 0, 0, 0.92);
 
     display: flex;
+
     justify-content: center;
     align-items: center;
 
@@ -337,7 +320,9 @@ main a:hover {
 }
 
 
-/* Großes Bild */
+/* ========================================
+   LIGHTBOX BILD
+   ======================================== */
 
 .lightbox img {
     display: block;
@@ -436,15 +421,15 @@ main a:hover {
     }
 
 
-    /*
-       Auch mobil bleiben die fünf Videos
-       eine wiederholende Sequenz.
-    */
+    /* Video auf Mobilgeräten */
 
-    .video-wall video {
-        height: 20vh;
+    .video-wall {
+        width: 90vw;
+        height: 60vh;
     }
 
+
+    /* Lightbox */
 
     .lightbox img {
         max-width: 94vw;
@@ -459,7 +444,6 @@ main a:hover {
 
         font-size: 25px;
     }
-
 
     .prev {
         left: 5px;
