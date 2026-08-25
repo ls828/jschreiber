@@ -137,6 +137,7 @@ main a:hover {
    ======================================== */
 
 @keyframes greenBlink {
+
     0%,
     100% {
         color: #00aa00;
@@ -147,6 +148,7 @@ main a:hover {
         color: #7fff7f;
         text-shadow: 0 0 15px #7fff7f;
     }
+
 }
 
 .stefan-highlight {
@@ -166,7 +168,7 @@ main a:hover {
 
 
 /* ========================================
-   FIXIERTES VIDEO IN DER MITTE
+   FIXIERTES VIDEO
    ======================================== */
 
 .video-wall {
@@ -182,11 +184,19 @@ main a:hover {
 
     z-index: 0;
 
+    overflow: hidden;
+
     pointer-events: none;
 
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+
+/* ========================================
+   VIDEO
+   ======================================== */
 
 .video-wall video {
     display: block;
@@ -198,6 +208,89 @@ main a:hover {
 
     margin: 0;
     padding: 0;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+}
+
+
+/*
+ * Nur wenn das Video tatsächlich läuft,
+ * wird es sichtbar.
+ */
+
+.video-wall video.video-playing {
+    opacity: 1;
+}
+
+
+/* ========================================
+   PLAY-BUTTON FÜR BLOCKIERTES AUTOPLAY
+   ======================================== */
+
+.video-play-button {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    background: rgba(0, 0, 0, 0.55);
+
+    color: white;
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    pointer-events: auto;
+
+    padding: 0;
+
+}
+
+
+/*
+ * Button wird nur sichtbar,
+ * wenn Autoplay nicht funktioniert.
+ */
+
+.video-play-button.visible {
+    display: flex;
+}
+
+
+/*
+ * Hover auf Desktop
+ */
+
+.video-play-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.08);
 }
 
 
@@ -206,6 +299,7 @@ main a:hover {
    ======================================== */
 
 .video-background .gallery {
+
     position: relative;
 
     z-index: 1;
@@ -222,6 +316,7 @@ main a:hover {
    ======================================== */
 
 .video-background .gallery img {
+
     display: block;
 
     width: 50%;
@@ -234,35 +329,32 @@ main a:hover {
 
     opacity: 0.15;
 
-    transition: opacity 0.3s ease;
+    transition:
+        opacity 0.3s ease;
 }
 
-
-/* ========================================
-   DESKTOP – HOVER
-   ======================================== */
-
-@media (hover: hover) and (pointer: fine) {
-
-    .video-background .gallery img:hover {
-        opacity: 1;
-    }
-
-}
-
-
-/* ========================================
-   MOBILE / TOUCH
-   ======================================== */
 
 /*
-   Wenn ein Bild per Finger angetippt wurde,
-   bekommt es die Klasse "touch-active"
-   und wird vollständig sichtbar.
-*/
+ * Desktop:
+ * Bild wird bei Hover vollständig sichtbar.
+ */
+
+.video-background .gallery img:hover {
+
+    opacity: 1;
+
+}
+
+
+/*
+ * Mobile:
+ * touch-active wird per JavaScript gesetzt.
+ */
 
 .video-background .gallery img.touch-active {
+
     opacity: 1;
+
 }
 
 
@@ -271,7 +363,9 @@ main a:hover {
    ======================================== */
 
 .video-background .gallery img:last-child {
+
     margin-bottom: 0;
+
 }
 
 
@@ -280,6 +374,7 @@ main a:hover {
    ======================================== */
 
 .announcement-image {
+
     display: block;
 
     width: 100%;
@@ -289,6 +384,7 @@ main a:hover {
     padding: 0;
 
     cursor: pointer;
+
 }
 
 
@@ -297,15 +393,21 @@ main a:hover {
    ======================================== */
 
 .announcement {
+
     padding: 40px 20px 80px;
+
 }
 
 .announcement h2 {
+
     margin-top: 0;
+
 }
 
 .announcement p {
+
     margin: 0 0 10px;
+
 }
 
 
@@ -314,6 +416,7 @@ main a:hover {
    ======================================== */
 
 .lightbox {
+
     position: fixed;
 
     inset: 0;
@@ -329,17 +432,23 @@ main a:hover {
     align-items: center;
 
     visibility: hidden;
+
     opacity: 0;
 
-    transition: opacity 0.2s ease;
+    transition:
+        opacity 0.2s ease;
 
     z-index: 1000;
+
 }
 
 
 .lightbox.active {
+
     visibility: visible;
+
     opacity: 1;
+
 }
 
 
@@ -348,6 +457,7 @@ main a:hover {
    ======================================== */
 
 .lightbox img {
+
     display: block;
 
     max-width: 92vw;
@@ -359,6 +469,7 @@ main a:hover {
     object-fit: contain;
 
     opacity: 1;
+
 }
 
 
@@ -367,6 +478,7 @@ main a:hover {
    ======================================== */
 
 .lightbox button {
+
     position: absolute;
 
     color: white;
@@ -383,11 +495,13 @@ main a:hover {
 
     justify-content: center;
     align-items: center;
+
 }
 
 
 .prev,
 .next {
+
     top: 50%;
 
     transform: translateY(-50%);
@@ -396,19 +510,26 @@ main a:hover {
     height: 70px;
 
     font-size: 32px;
+
 }
 
 
 .prev {
+
     left: 20px;
+
 }
 
+
 .next {
+
     right: 20px;
+
 }
 
 
 .close {
+
     top: 20px;
     right: 20px;
 
@@ -416,11 +537,15 @@ main a:hover {
     height: 50px;
 
     font-size: 32px;
+
 }
 
 
 .lightbox button:hover {
-    background: rgba(0, 0, 0, 0.75);
+
+    background:
+        rgba(0, 0, 0, 0.75);
+
 }
 
 
@@ -430,61 +555,99 @@ main a:hover {
 
 @media (max-width: 600px) {
 
+
     header {
+
         padding: 10px;
+
     }
+
 
     nav {
+
         gap: 1rem;
+
         margin-left: auto;
+
     }
+
 
     nav a {
+
         font-size: 0.85rem;
+
     }
 
 
-    /* Video auf Mobilgeräten */
+    /* ====================================
+       VIDEO AUF MOBILE
+       ==================================== */
 
     .video-wall {
+
         width: 90vw;
+
         height: 60vh;
+
     }
 
 
-    /* Galerie auf Mobilgeräten */
+    /*
+     * Playbutton auf Mobile etwas größer,
+     * damit er leicht mit dem Finger
+     * getroffen werden kann.
+     */
 
-    .video-background .gallery img {
-        width: 50%;
+    .video-play-button {
+
+        width: 64px;
+        height: 64px;
+
+        font-size: 25px;
+
     }
 
 
-    /* Lightbox */
+    /* ====================================
+       LIGHTBOX
+       ==================================== */
 
     .lightbox img {
+
         max-width: 94vw;
+
         max-height: 90vh;
+
     }
 
 
     .prev,
     .next {
+
         width: 40px;
         height: 55px;
 
         font-size: 25px;
+
     }
+
 
     .prev {
+
         left: 5px;
+
     }
 
+
     .next {
+
         right: 5px;
+
     }
 
 
     .close {
+
         top: 10px;
         right: 10px;
 
@@ -492,6 +655,7 @@ main a:hover {
         height: 40px;
 
         font-size: 26px;
+
     }
 
 }
