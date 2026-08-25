@@ -29,21 +29,13 @@
 
     <nav>
 
-        <a href="exhibitions.html">
-            Exhibitions
-        </a>
+        <a href="exhibitions.html">Exhibitions</a>
 
-        <a href="about.html">
-            About
-        </a>
+        <a href="about.html">About</a>
 
-        <a href="contact.html">
-            Contact
-        </a>
+        <a href="contact.html">Contact</a>
 
-        <a href="imprint.html">
-            Imprint
-        </a>
+        <a href="imprint.html">Imprint</a>
 
     </nav>
 
@@ -61,11 +53,9 @@
          ========================================= -->
 
     <h1>
-
         Stefan Sandner,
         "There's a better way to spend an afternoon",
         1.7.-9.7.2026
-
     </h1>
 
 
@@ -80,7 +70,7 @@
              FIXIERTES HINTERGRUNDVIDEO
              ===================================== -->
 
-        <div class="video-wall">
+        <div class="video-wall" id="videoWall">
 
             <video
                 id="backgroundVideo"
@@ -90,8 +80,6 @@
                 playsinline
                 webkit-playsinline
                 preload="auto"
-                disablepictureinpicture
-                controlslist="nodownload nofullscreen noremoteplayback"
                 aria-hidden="true"
             >
 
@@ -101,6 +89,20 @@
                 >
 
             </video>
+
+
+            <!-- PLAY-BUTTON
+                 erscheint nur wenn Autoplay
+                 blockiert wurde -->
+
+            <button
+                class="video-play-button"
+                id="videoPlayButton"
+                type="button"
+                aria-label="Video abspielen"
+            >
+                ▶
+            </button>
 
         </div>
 
@@ -117,192 +119,160 @@
                 alt="Stefan Sandner Ausstellung, Bild 01"
             >
 
-
             <img
                 src="assets/Stefan_02.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 02"
             >
-
 
             <img
                 src="assets/Stefan_03.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 03"
             >
 
-
             <img
                 src="assets/Stefan_04.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 04"
             >
-
 
             <img
                 src="assets/Stefan_05.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 05"
             >
 
-
             <img
                 src="assets/Stefan_06.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 06"
             >
-
 
             <img
                 src="assets/Stefan_07.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 07"
             >
 
-
             <img
                 src="assets/Stefan_08.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 08"
             >
-
 
             <img
                 src="assets/Stefan_09.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 09"
             >
 
-
             <img
                 src="assets/Stefan_10.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 10"
             >
-
 
             <img
                 src="assets/Stefan_11.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 11"
             >
 
-
             <img
                 src="assets/Stefan_12.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 12"
             >
-
 
             <img
                 src="assets/Stefan_13.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 13"
             >
 
-
             <img
                 src="assets/Stefan_14.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 14"
             >
-
 
             <img
                 src="assets/Stefan_15.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 15"
             >
 
-
             <img
                 src="assets/Stefan_16.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 16"
             >
-
 
             <img
                 src="assets/Stefan_17.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 17"
             >
 
-
             <img
                 src="assets/Stefan_18.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 18"
             >
-
 
             <img
                 src="assets/Stefan_19.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 19"
             >
 
-
             <img
                 src="assets/Stefan_20.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 20"
             >
-
 
             <img
                 src="assets/Stefan_21.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 21"
             >
 
-
             <img
                 src="assets/Stefan_22.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 22"
             >
-
 
             <img
                 src="assets/Stefan_23.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 23"
             >
 
-
             <img
                 src="assets/Stefan_24.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 24"
             >
-
 
             <img
                 src="assets/Stefan_25.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 25"
             >
 
-
             <img
                 src="assets/Stefan_26.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 26"
             >
-
 
             <img
                 src="assets/Stefan_27.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 27"
             >
 
-
             <img
                 src="assets/Stefan_28.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 28"
             >
-
 
             <img
                 src="assets/Stefan_29.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 29"
             >
 
-
             <img
                 src="assets/Stefan_30.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 30"
             >
-
 
             <img
                 src="assets/Stefan_31.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 31"
             >
 
-
             <img
                 src="assets/Stefan_32.jpg"
                 alt="Stefan Sandner Ausstellung, Bild 32"
             >
-
 
             <img
                 src="assets/Stefan_33.jpg"
@@ -332,45 +302,30 @@
     <div class="announcement">
 
         <h2>
-
             J. Schreiber lädt zur Finisage
             am Donnerstag 9.7.26 von 15:00 - 20:00!
-
         </h2>
 
-
         <p>
-
             J.Schreiber freut sich die Ausstellung
             „There’s a better way to spend an afternoon”
             von Stefan Sandner
-
         </p>
 
-
         <p>
-
             am 1.7. ab 18:00 zu eröffnen.
-
         </p>
 
-
         <p>
-
             1.7.-9.7.
-
         </p>
 
-
         <p>
-
             Meiselstraße 63/24<br>
             1140 Wien
-
         </p>
 
     </div>
-
 
 </main>
 
@@ -384,15 +339,12 @@
     id="lightbox"
 >
 
-
     <button
         class="close"
         id="closeBtn"
         aria-label="Schließen"
     >
-
         &times;
-
     </button>
 
 
@@ -401,9 +353,7 @@
         id="prevBtn"
         aria-label="Vorheriges Bild"
     >
-
         &#10094;
-
     </button>
 
 
@@ -419,11 +369,8 @@
         id="nextBtn"
         aria-label="Nächstes Bild"
     >
-
         &#10095;
-
     </button>
-
 
 </div>
 
@@ -436,42 +383,23 @@
 
 
 /* =========================================
-   VIDEO – AUTOPLAY
+   VIDEO
    ========================================= */
 
 const backgroundVideo =
     document.getElementById("backgroundVideo");
 
+const videoPlayButton =
+    document.getElementById("videoPlayButton");
+
+
+/*
+ * Video starten
+ */
 
 function startVideo() {
 
-    if (!backgroundVideo) {
-        return;
-    }
-
-
     backgroundVideo.muted = true;
-
-    backgroundVideo.defaultMuted = true;
-
-
-    backgroundVideo.setAttribute(
-        "muted",
-        ""
-    );
-
-
-    backgroundVideo.setAttribute(
-        "playsinline",
-        ""
-    );
-
-
-    backgroundVideo.setAttribute(
-        "webkit-playsinline",
-        ""
-    );
-
 
     const playPromise =
         backgroundVideo.play();
@@ -479,62 +407,101 @@ function startVideo() {
 
     if (playPromise !== undefined) {
 
-        playPromise.catch(function() {
+        playPromise
+            .then(function() {
 
-            /*
-             * Safari kann Autoplay blockieren.
-             * In diesem Fall versuchen wir es
-             * erneut, sobald der Browser das
-             * Video abspielen darf.
-             */
+                /*
+                 * Autoplay funktioniert.
+                 * Video anzeigen.
+                 */
 
-        });
+                backgroundVideo.classList.add(
+                    "video-playing"
+                );
+
+                videoPlayButton.classList.remove(
+                    "visible"
+                );
+
+            })
+            .catch(function() {
+
+                /*
+                 * Autoplay wurde blockiert.
+                 * Play-Button anzeigen.
+                 */
+
+                videoPlayButton.classList.add(
+                    "visible"
+                );
+
+            });
 
     }
 
 }
 
 
-/* Video sofort starten */
+/*
+ * Erster Versuch direkt beim Laden
+ */
 
 startVideo();
 
 
-/* Video starten sobald Daten vorhanden sind */
+/*
+ * Noch einmal versuchen sobald
+ * das Video geladen ist.
+ */
 
-if (backgroundVideo) {
-
-    backgroundVideo.addEventListener(
-        "loadeddata",
-        startVideo
-    );
-
-
-    backgroundVideo.addEventListener(
-        "canplay",
-        startVideo
-    );
+backgroundVideo.addEventListener(
+    "loadeddata",
+    startVideo
+);
 
 
-    /*
-     * Falls das Video pausiert wird,
-     * versuchen wir es wieder zu starten.
-     */
+backgroundVideo.addEventListener(
+    "canplay",
+    startVideo
+);
 
-    backgroundVideo.addEventListener(
-        "pause",
-        function() {
 
-            if (!document.hidden) {
+/*
+ * PLAY-BUTTON
+ */
 
-                startVideo();
+videoPlayButton.addEventListener(
+    "click",
+    function(event) {
 
-            }
+        event.stopPropagation();
 
-        }
-    );
+        backgroundVideo.muted = true;
 
-}
+        backgroundVideo.play()
+            .then(function() {
+
+                backgroundVideo.classList.add(
+                    "video-playing"
+                );
+
+                videoPlayButton.classList.remove(
+                    "visible"
+                );
+
+            })
+            .catch(function() {
+
+                /*
+                 * Falls der Browser den Start
+                 * weiterhin verhindert,
+                 * bleibt der Button sichtbar.
+                 */
+
+            });
+
+    }
+);
 
 
 /* =========================================
@@ -588,23 +555,19 @@ function openLightbox(index) {
 
     currentIndex = index;
 
-
     lightboxImg.src =
         galleryImages[
             currentIndex
         ].src;
-
 
     lightboxImg.alt =
         galleryImages[
             currentIndex
         ].alt;
 
-
     lightbox.classList.add(
         "active"
     );
-
 
     document.body.style.overflow =
         "hidden";
@@ -621,7 +584,6 @@ function closeLightbox() {
     lightbox.classList.remove(
         "active"
     );
-
 
     document.body.style.overflow =
         "";
@@ -689,12 +651,11 @@ function showNext() {
 
 
 /* =========================================
-   BILDER – DESKTOP + MOBILE
+   BILDER ANKLICKBAR
    ========================================= */
 
 galleryImages.forEach(
     function(img, index) {
-
 
         img.addEventListener(
             "click",
@@ -724,7 +685,6 @@ galleryImages.forEach(
                         )
                     ) {
 
-
                         galleryImages.forEach(
                             function(otherImg) {
 
@@ -749,8 +709,7 @@ galleryImages.forEach(
 
 
                 /*
-                 * DESKTOP
-                 *
+                 * Desktop:
                  * Klick öffnet direkt
                  * die Lightbox.
                  */
@@ -787,7 +746,7 @@ nextBtn.addEventListener(
 
 
 /* =========================================
-   KLICK AUF SCHWARZEN BEREICH
+   SCHWARZER HINTERGRUND
    ========================================= */
 
 lightbox.addEventListener(
@@ -813,7 +772,6 @@ lightbox.addEventListener(
 document.addEventListener(
     "keydown",
     function(event) {
-
 
         if (
             !lightbox.classList.contains(
