@@ -436,6 +436,40 @@ galleryImages.forEach(function(img, index) {
 
     img.addEventListener("click", function() {
 
+        /*
+         * TOUCH / MOBILE
+         *
+         * Erster Tap:
+         * Bild wird sichtbar.
+         *
+         * Zweiter Tap:
+         * Lightbox wird geöffnet.
+         */
+
+        if (window.matchMedia("(hover: none)").matches) {
+
+            if (!img.classList.contains("touch-active")) {
+
+                galleryImages.forEach(function(otherImg) {
+
+                    otherImg.classList.remove("touch-active");
+
+                });
+
+                img.classList.add("touch-active");
+
+                return;
+            }
+
+        }
+
+
+        /*
+         * DESKTOP
+         *
+         * Klick öffnet direkt die Lightbox.
+         */
+
         openLightbox(index);
 
     });
