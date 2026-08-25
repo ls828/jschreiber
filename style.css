@@ -238,14 +238,37 @@ main a:hover {
 }
 
 
-/* Bild wird bei Hover vollständig sichtbar */
+/* ========================================
+   DESKTOP – HOVER
+   ======================================== */
 
-.video-background .gallery img:hover {
+@media (hover: hover) and (pointer: fine) {
+
+    .video-background .gallery img:hover {
+        opacity: 1;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE / TOUCH
+   ======================================== */
+
+/*
+   Wenn ein Bild per Finger angetippt wurde,
+   bekommt es die Klasse "touch-active"
+   und wird vollständig sichtbar.
+*/
+
+.video-background .gallery img.touch-active {
     opacity: 1;
 }
 
 
-/* Letztes Bild ohne zusätzlichen Abstand */
+/* ========================================
+   LETZTES BILD
+   ======================================== */
 
 .video-background .gallery img:last-child {
     margin-bottom: 0;
@@ -426,6 +449,13 @@ main a:hover {
     .video-wall {
         width: 90vw;
         height: 60vh;
+    }
+
+
+    /* Galerie auf Mobilgeräten */
+
+    .video-background .gallery img {
+        width: 50%;
     }
 
 
