@@ -93,5 +93,28 @@
     </div>
 
 
+<script>
+    const documentOverlay =
+        document.getElementById("documentOverlay");
+
+    const documentClose =
+        document.getElementById("documentClose");
+
+    function closeDocumentAnimation() {
+        documentOverlay.style.display = "none";
+    }
+
+    documentClose.addEventListener(
+        "click",
+        closeDocumentAnimation
+    );
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            closeDocumentAnimation();
+        }
+    });
+</script>
+
 </body>
 </html>
