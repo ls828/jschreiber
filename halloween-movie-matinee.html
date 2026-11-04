@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halloween Movie Matinée - J.Schreiber</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .thank-you {
+            max-width: 900px;
+            padding: 0 20px;
+            font-size: 1.4rem;
+            line-height: 1.8;
+        }
+
+        .event-materials {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            align-items: start;
+            gap: 32px;
+            width: min(100% - 40px, 1000px);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .event-materials > h2 {
+            grid-column: 1 / -1;
+            margin-bottom: 0;
+        }
+
+        .event-material {
+            min-width: 0;
+            margin: 30px 0 50px;
+        }
+
+        .event-preview {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            background: #f5f5f5;
+        }
+
+        @media (max-width: 700px) {
+            .event-materials {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+
+        .screening-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            width: min(100% - 40px, 1000px);
+            margin-bottom: 40px;
+        }
+
+        .screening-gallery img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="index.html">J.Schreiber</a></div>
+        <nav>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="imprint.html">Imprint</a>
+        </nav>
+    </header>
+
+    <div class="red-bar"></div>
+
+    <main>
+        <p class="thank-you">
+            Thank you for joining us. It was a wonderful afternoon spent attentively watching films together.
+            What better way is there to spend a grey, cold autumn afternoon? We certainly cannot think of many.
+            We hope you enjoyed yourselves as much as we did providing the framework and the warm refreshments.
+            A very special thank you to J. Schreiber for giving an in-depth introduction to the afternoon's program.
+        </p>
+
+        <section class="event-materials" aria-labelledby="downloads-heading">
+            <article class="event-material">
+                <h3>Invitation</h3>
+                <img
+                    class="event-preview"
+                    src="assets/261028_screening_invitation_preview.png"
+                    alt="Preview of the Halloween Movie Matinée invitation"
+                >
+                <p>
+                    <a href="assets/261028_screening_invitation.pdf" download>
+                        Download the invitation (PDF)
+                    </a>
+                </p>
+            </article>
+
+            <article class="event-material">
+                <h3>Screening Programme</h3>
+                <img
+                    class="event-preview programme-preview"
+                    src="assets/261028_screening_programm_preview.png"
+                    alt="Preview of the Halloween Movie Matinée screening programme"
+                >
+                <p>
+                    <a href="assets/261028_screening_programm.pdf" download>
+                        Download the screening programme (PDF)
+                    </a>
+                </p>
+            </article>
+        </section>
+
+        <div class="screening-gallery">
+            <img src="assets/Screening_01.JPG" alt="Halloween Movie Matinée screening, photo 1">
+            <img src="assets/Screening_02.JPG" alt="Halloween Movie Matinée screening, photo 2">
+            <img src="assets/Screening_03.JPG" alt="Halloween Movie Matinée screening, photo 3">
+            <img src="assets/Screening_04.JPG" alt="Halloween Movie Matinée screening, photo 4">
+            <img src="assets/Screening_05.JPG" alt="Halloween Movie Matinée screening, photo 5">
+            <img src="assets/Screening_06.JPG" alt="Halloween Movie Matinée screening, photo 6">
+            <img src="assets/Screening_07.JPG" alt="Halloween Movie Matinée screening, photo 7">
+            <img src="assets/Screening_08.JPG" alt="Halloween Movie Matinée screening, photo 8">
+            <img src="assets/Screening_09.JPG" alt="Halloween Movie Matinée screening, photo 9">
+            <img src="assets/Screening_10.JPG" alt="Halloween Movie Matinée screening, photo 10">
+        </div>
+    </main>
+</body>
+</html>
