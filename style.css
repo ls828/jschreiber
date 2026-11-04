@@ -20,14 +20,18 @@ header {
 
 .logo {
     margin: 0;
-    color: red;
-    font-size: 1.5rem;
-    font-weight: bold;
 }
 
 .logo a {
-    color: red;
+    display: block;
     text-decoration: none;
+}
+
+.logo img {
+    display: block;
+    width: 160px;
+    height: auto;
+    filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(7496%) hue-rotate(2deg) brightness(102%) contrast(115%);
 }
 
 
@@ -74,6 +78,14 @@ main {
     align-items: center;
     width: 100%;
     margin-top: 50px;
+}
+
+.home-logo {
+    display: block;
+    width: 240px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(7496%) hue-rotate(2deg) brightness(102%) contrast(115%);
 }
 
 main p,
