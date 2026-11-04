@@ -75,50 +75,5 @@
 
     </main>
 
-    
-    <!-- FULLSCREEN JPG ANIMATION -->
-    <div id="documentOverlay" class="document-overlay">
-
-        <img
-            id="documentImage"
-            src="assets/261028_screening_invitation.jpg"
-            alt="Featured image"
-        >
-
-        <button
-            id="documentClose"
-            class="document-close"
-            type="button"
-            aria-label="Close image"
-        >
-            &times;
-        </button>
-
-    </div>
-
-
-<script>
-    const documentOverlay =
-        document.getElementById("documentOverlay");
-
-    const documentClose =
-        document.getElementById("documentClose");
-
-    function closeDocumentAnimation() {
-        documentOverlay.style.display = "none";
-    }
-
-    documentClose.addEventListener(
-        "click",
-        closeDocumentAnimation
-    );
-
-    document.addEventListener("keydown", function(event) {
-        if (event.key === "Escape") {
-            closeDocumentAnimation();
-        }
-    });
-</script>
-
 </body>
 </html>
